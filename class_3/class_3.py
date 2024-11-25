@@ -294,6 +294,30 @@ set1.add(new_element)
 set1.discard(new_element)
 # 20
 set1.pop()
+# 21 
+lst = [1,3,3,2,1,2,3,2,1]
+st = set(lst)
+lst = list(st)
+# 22
+st = set()
+lst = [x for x in lst if not (x in st or st.add(x))]
+# 23
+def create_nested_sets(elements, group_size):
+    nested_sets = set()
+    for i in range(0, len(elements), group_size):
+        subset = frozenset(elements[i:i + group_size])
+        nested_sets.add(subset)
+    return nested_sets
+# 24
+len(set(lst))
+# 25
+import random
+
+def generate_random_set(count):
+    random_set = set()
+    while len(random_set) < count:
+        random_set.add(random.randint(0, 100))  # Adjust the range if needed
+    return random_set
 
 ## Dictionaries
 # 1
